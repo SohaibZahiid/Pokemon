@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Details</title>
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pokemon-details.css">
+</head>
+<body>
+    <main class="container nes-text">
+        <div class="pokemon-container">
+            <a href="../../index.html" class="nes-btn back">Back</a>
+            <div class="pokemon-image">
+                <img class="image" src="">
+            </div>
+            <div class="pokemon-details nes-container is-dark">
+                <div class="details-container">
+                    <h3 class="name"></h3>
+                    <div class="specs-container">
+                        <div class="spec">
+                            <p>Base Experience</p>
+                            <p class="base-exp"></p>
+                        </div>
+                        <div class="spec">
+                            <p>Height</p>
+                            <p class="height"></p>
+                        </div>
+                        <div class="spec">
+                            <p>weight</p>
+                            <p class="weight"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../../dest/src/details/pokemon-details.js"></script>
+</body>
+</html>
