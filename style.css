@@ -68,9 +68,9 @@ button {
 }
 
 .pokemon-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    place-items: center;
     gap: 2em;
 }
 
@@ -115,6 +115,7 @@ button {
 }
 
 .pagination {
+    width: 100%;
     margin-top: 2em;
     display: flex;
     justify-content: center;
@@ -139,10 +140,10 @@ button {
     padding: 10px;
 }
 
-.pagination ul li.num {
+/* .pagination ul li.num {
     height: 75px;
     width: 60px;
-}
+} */
 
 .pagination ul li.btn {
     line-height: 60px;
