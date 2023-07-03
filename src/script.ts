@@ -76,6 +76,9 @@ function createPokemonDOM(pokemons: IPokemonDetails[]): void {
         //Create Element
         const pokemonEl = document.createElement('div')
         pokemonEl.classList.add('pokemon')
+        //Gets Background Color
+        const backgroundColor: string = getColor(pokemon.type) || ''
+        pokemonEl.style.backgroundColor = backgroundColor
         //Inside Pokemon Element
         const html = `
           <h4 class="name">${pokemon.name}</h4>
@@ -235,26 +238,7 @@ function createTypesDOM(pokemons: IPokemonDetails[]) {
         //Checks If Types Are Not Repeating
         if (!uniqueTypes.has(pokemon.type)) {
             uniqueTypes.add(pokemon.type)
-            let backgroundColor: string = ''
-            if (pokemon.type == 'fire') {
-                backgroundColor = "#e72324"
-            } else if (pokemon.type == 'grass') {
-                backgroundColor = "#3da224"
-            } else if (pokemon.type == 'water') {
-                backgroundColor = "#2481ef"
-            } else if (pokemon.type == 'bug') {
-                backgroundColor = "#92a212"
-            } else if (pokemon.type == 'normal') {
-                backgroundColor = "#a0a2a0"
-            } else if (pokemon.type == 'poison') {
-                backgroundColor = "#923fcc"
-            } else if (pokemon.type == 'electric') {
-                backgroundColor = "#f9c000"
-            } else if (pokemon.type == 'ground') {
-                backgroundColor = "#92501b"
-            } else if (pokemon.type == 'fairy') {
-                backgroundColor = "#ef70ef"
-            }
+            let backgroundColor: string = getColor(pokemon.type) || ''
             html += `
             <button class="btn type" style="background-color:${backgroundColor}">${pokemon.type}</button>
             `
@@ -294,3 +278,31 @@ function getPokemonsTypes(selected: string) {
     createPokemonDOM(filteredPokemons)
     createPaginationDOM(filteredPokemons.length)
 }
+
+//Gets Specific Color Based On Pokemon Type
+function getColor(type: string) {
+    let backgroundColor: string = ''
+
+    if (type == 'fire') {
+        backgroundColor = "#e72324"
+    } else if (type == 'grass') {
+        backgroundColor = "#3da224"
+    } else if (type == 'water') {
+        backgroundColor = "#2481ef"
+    } else if (type == 'bug') {
+        backgroundColor = "#92a212"
+    } else if (type == 'normal') {
+        backgroundColor = "#a0a2a0"
+    } else if (type == 'poison') {
+        backgroundColor = "#923fcc"
+    } else if (type == 'electric') {
+        backgroundColor = "#f9c000"
+    } else if (type == 'ground') {
+        backgroundColor = "#92501b"
+    } else if (type == 'fairy') {
+        backgroundColor = "#ef70ef"
+    }
+
+    return backgroundColor
+}
+
