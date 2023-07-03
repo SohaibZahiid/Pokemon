@@ -123,6 +123,7 @@ button {
 
 .pagination ul {
     display: flex;
+    flex-wrap: wrap;
     background-color: orange;
     padding: 8px;
     border-radius: 5px;
@@ -140,10 +141,10 @@ button {
     padding: 10px;
 }
 
-/* .pagination ul li.num {
+.pagination ul li.num {
     height: 75px;
     width: 60px;
-} */
+}
 
 .pagination ul li.btn {
     line-height: 60px;
